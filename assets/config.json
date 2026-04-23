@@ -1,0 +1,48 @@
+{
+  "gateway": {
+    "launcherPath": "%USERPROFILE%\\.openclaw\\gateway.cmd",
+    "taskName": "OpenClaw Gateway",
+    "port": 18789
+  },
+  "paths": {
+    "openclawConfigPath": "%USERPROFILE%\\.openclaw\\openclaw.json",
+    "agentModelsPath": "%USERPROFILE%\\.openclaw\\agents\\main\\agent\\models.json",
+    "logDir": "%LOCALAPPDATA%\\Temp\\openclaw",
+    "statusFile": "%LOCALAPPDATA%\\Temp\\openclaw\\gateway-supervisor.status.txt",
+    "supervisorLogFile": "%LOCALAPPDATA%\\Temp\\openclaw\\gateway-supervisor.log",
+    "modelBackupFile": "%LOCALAPPDATA%\\Temp\\openclaw\\gateway-model-routing.backup.json"
+  },
+  "activity": {
+    "idleCheckIntervalSeconds": 15,
+    "activeWorkGraceSeconds": 180,
+    "patterns": [
+      "agent/embedded",
+      "model-fallback/decision",
+      "embedded_run_",
+      "lane task"
+    ]
+  },
+  "models": {
+    "replacementCandidates": [
+      "bailian/qwen3.6-plus",
+      "bailian/kimi-k2.5",
+      "moonshot/deepseek-chat",
+      "bailian/glm-5",
+      "bailian/MiniMax-M2.5"
+    ]
+  },
+  "notifications": {
+    "title": "OpenClaw Network Change",
+    "useMsgExe": true,
+    "msgTimeoutSeconds": 8
+  },
+  "proxy": {
+    "registryPath": "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings",
+    "watchValues": [
+      "ProxyEnable",
+      "ProxyServer",
+      "ProxyOverride",
+      "AutoConfigURL"
+    ]
+  }
+}
