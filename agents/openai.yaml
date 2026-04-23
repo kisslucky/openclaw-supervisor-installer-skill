@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenClaw Supervisor Installer"
+  short_description: "Install and tune a network-aware gateway supervisor for OpenClaw"
+  default_prompt: "Use $openclaw-supervisor-installer to install or update a network-aware OpenClaw gateway supervisor on this Windows machine."
